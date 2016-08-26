@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    app: www-iapp
+  name: www-iapp-v1
+  namespace: iapp
+spec:
+  replicas: 1
+  selector:
+    app: www-iapp
+  template:
+    metadata:
+      labels:
+        app: www-iapp
+    spec:
+      containers:
+      - image: msirovy/portal-iapp
+        name: www-iapp
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+      dnsPolicy: ClusterFirst
