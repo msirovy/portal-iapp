@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: iapp-ingress
+  namespace: iapp
+spec:
+  rules:
+  - host: esko3.cz.easy2.cloud
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: www-iapp-svc
+          servicePort: 80
+
+
