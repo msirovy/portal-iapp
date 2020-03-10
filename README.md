@@ -20,6 +20,12 @@ Deployment
     ```
     kubectl create -f iapp-svc.yaml
     ```
+  - configure nginx ingress
+    ```
+    kubectl create -f ingress.yaml
+    ```
+
+
 
 
 Rolling update
